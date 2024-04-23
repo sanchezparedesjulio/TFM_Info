@@ -1,0 +1,3 @@
+En caso de que no se disponga de diccionario de español, 
+colocar estos dos ficheros en la carpeta "Dictionaries" 
+del directorio donde esté instalado el TeXnicCenter

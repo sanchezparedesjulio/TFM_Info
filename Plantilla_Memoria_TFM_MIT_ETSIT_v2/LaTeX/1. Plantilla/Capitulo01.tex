@@ -1,0 +1,456 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Documento LaTeX 																						%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Título:		Capítulo 1
+% Autor:  	Ignacio Moreno Doblas
+% Fecha:  	2014-02-01
+% Versión:	0.5.0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapterbegin{Manual básico de \LaTeX}
+\label{chp:ManLaTeX}
+\minitoc
+
+\begin{sinopsis}
+\label{sec:chpltx:sinop}
+	Éste es el primer capítulo de desarrollo del proyecto, definido y estructurado según el autor necesite y desee. \nli
+	En este caso, no hay guías genéricas para cualquier proyecto más allá del manual de estilo comentado anteriormente.
+
+	En esta plantilla, este capítulo se enfoca como un manual básico de \LaTeX\ para cualquiera que lo necesite.
+	
+	Como plantilla, está basada en la \ttw{\textbackslash documentclass} tipo \ttw{book}, empleando partes, capítulos, secciones, etc.\nli
+	Quizá para un proyecto fin de carrera no sean necesarias varias partes, así que el autor puede suprimirlas si quiere.
+	
+	\LaTeX\ es una herramienta muy orientada a documentos que contienen tablas, figuras, referencias cruzadas, bibliografía, glosarios, apéndices, ecuaciones matemáticas o unidades físicas.
+\end{sinopsis}
+
+\section{Estructura y formato del proyecto}
+\label{sec:EstrForm}
+	Esta plantilla sigue las especificaciones de la ETSIT para presentar un TFG/PFC/TFM. \nli
+	Igualmente, la plantilla con su material adicional está disponible en la \tit{web} del centro (\url{www.etsit.uma.es}.)
+
+\section{Apartados de la plantilla}
+	La plantilla está estructurada en los siguientes archivos y directorios:
+\begin{itemize}
+	\item{Veintidós ficheros \TeX\ (extensión \ttw{.tex}).}
+	
+	\item{Un fichero Bib\TeX\ (extensión \ttw{.bib}).}
+	
+	\item{Un fichero PDF resultante.}
+	
+	\item{Dos ficheros \TeX nicCenter (extensión \ttw{.tps} y \ttw{.tcp}).}
+	
+	\item{Dos directorios complementarios.\nli
+		Uno de código fuente (\ttw{code}) y otro de gráficos (\ttw{graphs}).}
+	
+\end{itemize}
+
+	En la figura~\ref{fig:ficherosPlan}, puede verse la lista de ficheros del proyecto, tal y como se presenta en el entorno \TeX nicCenter.
+
+	A su vez, los veintidós ficheros \TeX\ contienen un documento maestro a partir del cual se referencia el resto de archivos, repartidos en cuatro clases.
+	
+	Los archivos contienen un prefijo que hace que su posición en la lista sea equivalente al orden en el documento PDF resultante. Este prefijo es una letra y un número en arábigo. 
+	
+	Por ejemplo, el documento maestro, ``\ttw{A0.Mi Proyecto fin de carrera.tex}'' comienza por \ttw{A0} para que figure en primer lugar.
+
+	Las cuatro clases de archivos antes mencionadas son las siguientes:
+\begin{descript}
+	\item[Archivos de preámbulo]{Forman el preámbulo del documento \LaTeX\ y su contenido no se visualiza en el fichero PDF resultante.\nli
+		Comienzan por la letra \ttw{A} y un número desde el uno al cuatro.}
+	\item[Archivos iniciales]{Son los archivos iniciales del proyecto, desde la portada, si la hay, dedicatoria, acrónimos, tablas de contenido, prólogo e introducción.\nli
+		Comienzan por la letra \ttw{B} y un número del cuatro al siete.}
+	\item[Archivos de capítulo]{Son los ficheros de capítulo del proyecto.\nli
+	Dado que su primera letra coincide con la letra C, no tienen ninguna identificación especial.}
+	\item[Archivos finales]{Por último, los archivos de conclusiones, apéndices, bibliografía y glosario (\tit{index} en inglés).}
+\end{descript}
+
+\begin{figure}[h]
+	\centering
+		\includegraphics[width=9cm]{graphs/ArchivosPlantilla.png}
+	\caption{Ficheros de la plantilla}
+	\label{fig:ficherosPlan}
+\end{figure}
+
+	En la figura~\ref{fig:ficherosPlan}, segmentada en dos mitades, se observan todos estos archivos ordenados según el orden secuencial como se visualiza en el documento PDF.\nli
+	Esta ordenación permite una elaboración cómoda del proyecto en sus diferentes secciones. Se recomienda mantener esta ordenación.\nli
+	Por contra, si no se hubieran creado los prefijos, los apéndices aparecerían en el entorno antes que los capítulos, aunque en el PDF ocurra al revés. Esta distribución haría más difícil para el proyectando producir un documento ordenado y limpio.
+	
+	\medskip
+	En el documento PDF resultante, el proyecto se estructura en los nueve apartados siguientes:
+\begin{descript}
+	\item[Portada y encuadernación.]{Es específica de cada tipo de trabajo (TFG/PFC/TFM) y debe ajustarse a lo establecido en la Secretaría.
+	
+	Para esta plantilla, sólo en el caso de los PFC del plan a extinguir se provee de una portada. Para los TFG y TFM, existen plantillas externas que pueden descargarse de la \tit{web} de la ETSIT.}
+
+	\item[Primeras páginas.]{Contendrá las páginas que correspondan con el tipo de trabajo y que es específica de cada tipo de proyecto.}
+	
+	\item[Agradecimientos y dedicatoria.]{La sección de agradecimientos (evidentemente, no obligatoria) define un apartado donde el proyectando puede (y quizás, debe) referenciar a aquellas personas y/o instituciones que, de manera generosa, han colaborado de algún modo en la gestación y desarrollo del PFC.\nli
+	Igualmente el proyectando también puede utilizar este apartado libremente para mencionar a aquellos familiares, compañeros, amigos, etc., de los que ha recibido apoyo personal, moral o afectivo.\nli
+	Por contra, no debe utilizarse esta sección para expresar opiniones críticas, ácidas o mordaces contra particulares o instituciones de la ETSIT o la Universidad debido a correcciones, exámenes, trato recibido u otras interacciones o causas cualesquiera que sean.\nli
+	Estaría fuera del ámbito del proyecto y debe respetarse.
+}
+	
+	\item[Índice.]{En la plantilla, se genera un índice, índice de figuras e índice de tablas, numerado automáticamente con su correspondiente página. Ésta es una de las ventajas de \LaTeX.}
+	
+	\item[Capítulo de Introducción.]{En éste se hará una introducción al ámbito del trabajo, comenzando por el contexto general y aproximándose progresivamente a los aspectos más concretos que se traten. \nli
+	Es conveniente terminar con una exposición clara de los objetivos que se persiguen, la metodología empleada y el contenido del proyecto.}
+	
+	\item[Capítulos de desarrollo.]{A continuación el desarrollo de los distintos capítulos o epígrafes que componen el trabajo.\nli
+	En esta plantilla, éste es ese capítulo, que además incluye un manual de \LaTeX\ práctico.}
+	
+	\item[Conclusiones.]{En este apartado el estudiante expondrá con claridad los resultados o conclusiones obtenidas y el juicio crítico que le merecen.}
+	
+	\item[Referencias bibliográficas.]{A continuación de las conclusiones se insertarán un apartado con todas las referencias bibliográficas que aparezcan en la memoria: revistas, artículos de revistas o congresos, páginas web, etc.
+	
+	En \LaTeX, existe el entorno Bib\TeX\ para almacenar y referenciar bibliografía.}
+	
+	\item[Apéndices.]{Finalmente se presentarán los apéndices, si los hubiere.
+	
+	En esta plantilla se provee del entorno \ttw{\textbackslash appendix} para crearlos.}
+\end{descript}
+
+	Por último, respecto de las secciones del proyecto, hay que tener en cuenta que un proyecto puede ser un documento extenso, complejo y por eso se recomienda seguir este tipo de reglas para facilitar su elaboración.\nli
+	Además, se recomienda generarlo incrementalmente, anulando las secciones que no se utilicen desde el documento maestro. Por ejemplo, al elaborar el capítulo tres y generar el documento PDF, no es necesario ni el prólogo, ni los capítulos anteriores ni posteriores, por tanto, pueden comentarse con el símbolo tanto por ciento (\ttw{\%}). En ese caso, la compilación será más rápida, el PDF más breve y la revisión también.
+
+\section{Referencias Cruzadas}
+\label{sec:RefCruz}
+	Normalmente, surge la necesidad de referenciar información desde una sección de la documentación hasta otra.\nli
+	Esta información referenciada puede ser un apartado, una figura, una tabla, una página o una ecuación.
+	
+	Por ejemplo, el presente capítulo~\ref{chp:ManLaTeX} comienza en la página~\pageref{chp:ManLaTeX} y está titulado \nameref{chp:ManLaTeX}.\nli
+	Tanto el número de capítulo, su página o su título no están escritos manualmente, sino referenciados mediante etiquetas.
+	
+	Las referencias cruzadas se realizan siguiendo tres pasos secuenciales:
+\begin{enu}
+	\item{Se etiqueta el elemento a referenciar, ya sea sección, apartado, figura, tabla, ecuación o cualquier otro con el comando \ttw{\textbackslash label}.\nli
+	Para ello, se escribe próximo a él un identificador con el comando \ttw{\textbackslash label}.\nli
+	Por ejemplo, \ttw{\textbackslash label\{sec:RefCruz\}} es la etiqueta del presente apartado.\nli
+	Se recomienda, en general, usar como prefijo \ttw{chp} para capítulos, \ttw{sec} para secciones, \ttw{eq} para ecuaciones, \ttw{fig} para figuras o \ttw{tab} para tablas. También usar los dos puntos (:) como separador entre el prefijo y el resto de la etiqueta.\nli
+	A lo largo de esta plantilla pueden encontrarse muchas etiquetas de ejemplo.}
+	
+	\item{Se compila si es la primera vez que se crea la etiqueta.
+	Aunque este paso depende del compilador, en el caso de MiK\TeX\ es necesario compilar para indexar la etiqueta y poder referenciarla, como se indica en el paso siguiente.}
+
+	\item{Se referencia una etiqueta ya definida con el comando \ttw{\textbackslash ref}.\nli
+		Por ejemplo, \ttw{\textbackslash ref\{sec:RefCruz\}} referencia el presente apartado, cuyo valor es \ref{sec:RefCruz}.}
+	
+	\item{Se compila el documento para crear la referencia a partir de los índices generados en la compilación anterior.\nli
+	Esto es especialmente importante, porque la referencia se crea a partir de la compilación anterior. Si el apartado cambia de página, se debe re-compilar para actualizar la referencia; si no se compila, la referencia se hará según la información desactualizada, es decir, a la página anterior.\nli
+	\emph{En general y términos prácticos, se debe compilar frecuentemente para tener siempre información actualizada.}}
+\end{enu}
+
+%\section{Formato de otros elementos}
+\section{Figuras}
+	Las figuras aparecerán centradas y se verán siempre acompañadas por un título explicativo, también centrado y situado en la parte inferior.\nli	
+	El título comienza por la palabra ``Figura'' con un identificador de figura formado por el número de capítulo y el número de figura.\nli
+	El propio título debe ser lo bastante explicativo para poder entender el significado de la figura o distinguirla de las demás, pero no puede ser muy extenso para ser cómodamente legible.\nli
+	Para cualquier explicación o justificación más extensa, se debe describir en un párrafo aparte, utilizando referencias cruzadas.
+	%Por ejemplo, si se están mostrando resultados, el título ha describir brevemente en qué condiciones se han obtenido los resultados mostrados.
+	Además, tanto el título como el identificador aparecerán referenciados en el índice de figura al principio de la memoria.
+	\smallskip
+	
+	En \LaTeX, el entorno \ttw{figure} automatiza la presentación de figuras siguiendo estas reglas.\nli
+	A continuación se ve el texto original utilizado para la figura~\ref{fig:escudo:ETSIT} de la página~\pageref{fig:escudo:ETSIT}, titulada \nameref{fig:escudo:ETSIT}.\nli
+	Para respetar los espacios y el texto original se ha utilizado el entorno \ttw{lstlisting}.
+	
+\begin{lstlisting}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=3cm]{graphs/EscudoETSIT.pdf}
+		\caption{Escudo oficial de la ETSIT}
+		\label{fig:escudo:ETSIT}
+	\end{figure}
+\end{lstlisting}
+
+\begin{figure}[h]
+	\centering
+		\includegraphics[width=3cm]{graphs/EscudoETSIT.pdf}
+	\caption{Escudo oficial de la ETSIT}
+	\label{fig:escudo:ETSIT}
+\end{figure}
+
+	\ \\[1ex]
+	Puede ser necesario presentar una figura conteniendo varias en su interior. En ese caso, el entorno \ttw{\textbackslash minipage} cumple esta función.\nli
+	En la figura~\ref{fig:escudo:UMA}, se muestran los dos escudos de la Universidad de Málaga.
+	
+	\begin{figure}[h]
+		\centering
+			\begin{minipage}[l]{4cm}
+			\includegraphics[width=4cm]{graphs/UMA.pdf}
+			\end{minipage}
+			\ \ 
+			\begin{minipage}[r]{4cm}
+			\includegraphics[width=4cm]{graphs/UnivMalacitana.pdf}
+			\end{minipage}
+		\caption{Escudos oficiales de la UMA}
+		\label{fig:escudo:UMA}
+	\end{figure}
+	
+	
+	También es importante conocer varias características sobre los gráficos vectoriales y pixelados (también llamados rasterizados\footnote{en inglés, \tit{raster}.}) y sobre los formatos aceptados por \LaTeX\ para gráficos, aunque esto dependerá del compilador utilizado.
+
+\smallskip
+	
+	En general, hay dos tipos de ficheros gráficos en un ordenador:
+\begin{descript}
+	\item[Pixelados o rasterizados]{El gráfico está formado por una matriz de píxeles, como en una fotografía digital.\nli
+	Ejemplos de formatos rasterizados son JPG, PNG, GIF o TIFF.}
+
+	\item[Vectoriales]{El gráfico está formado por curvas geométricas, lo que hace que independientemente de la escala mostrada, se mantenga la misma definición, tanto en color como en forma.\nli
+	Ejemplos de formatos vectoriales son EPS (\tit{Encapsulated PostScript}), PDF o SVG (\tit{Scalable Vector Graphics}).\nli
+	Un ejemplo concreto es la figura~\ref{fig:escudo:ETSIT}, que está en PDF.
+	}
+\end{descript}
+
+	Las explicaciones siguientes están enfocadas al entorno de Windows MiK\TeX\ y \TeX nicCenter. Puede haber variaciones en otros entornos de \LaTeX\ como \TeX Live\ (usado en Linux) o \TeX shop (usado en Apple\R).
+
+	Si se desea insertar un gráfico vectorial y se emplea el compilador \ttw{pdflatex.exe} de MiK\TeX, el formato del gráfico debe ser PDF.\nli	
+	Si los gráficos vectoriales están en otro formato, tales como SVG o EPS, es necesario usar un conversor.\nli
+	Una opción sencilla y gratuita es el editor Inkscape\R, disponible en Internet. No es necesario instalarlo, ya que puede encontrarse una edición portable, que sólo requiere ser descomprimida y ejecutada.	
+
+\section{Tablas}
+	La presentación de las tablas es equivalente a la de las figuras, tanto en su posición centrada como en su título.
+	
+	En \LaTeX\ existen varios entornos para presentar una tabla, dependiendo de qué se desee:
+	\begin{ite}
+		\item{El entorno \tbf{\ttw{tabular}} permite crear una tabla a partir de definir sus filas, columnas y su formato.\nli
+		Está limitado a no poder fragmentarse en varias páginas si la tabla es demasiado extensa.}
+		\item{El entorno \tbf{\ttw{table}} formatea una tabla, una sección de código fuente o algún componente equivalente.\nli
+		Permite posicionar, ponerle un título y añadirlo al índice de tablas.\nli
+		En el ejemplo siguiente, se utilizan los dos entornos, uno \ttw{table} y otro \ttw{tabular} anidado en el primero.}
+		\item{El entorno \tbf{\ttw{longtable}} es equivalente a \ttw{tabular}, pero además supera la limitación de extender una tabla a más de una página.}
+	\end{ite}
+	
+	De nuevo, las tablas aparecen referenciadas en un índice de tablas tras el índice temático y del índice de figuras.
+	
+	A continuación, se muestra el código \LaTeX\ de la tabla~\ref{tab:SAR}, presente en la página~\ref{tab:SAR}, titulada \nameref{tab:SAR}.
+	
+\begin{lstlisting}
+	\begin{table}[h]%
+	\centering
+	\begin{tabular}{|c|p{14ex}|c|c|}
+		\hline
+		\hline
+		\tbf{Requisito} & \tbf{Plat. Ref.} & 
+			\tbf{SAR (dBm)} & \tbf{Tol.}\\
+		\hline
+		R101  &  Baytrail & 5 & 1 \\
+		\hline
+		R201  &  Clovertrail & 6 & 2\\
+		\hline
+		R301  &  Merrifield & 4 & 3\\
+		\hline
+		\hline
+	\end{tabular}
+	\caption{Tabla de SAR por Plat. de Ref.}
+	\label{tab:SAR}
+	\end{table}
+\end{lstlisting}
+	
+	%\begin{center}
+	\begin{table}[h]%
+	\centering
+	%\begin{longtable}{c|p{10cm}}
+	\begin{tabular}{|c|p{14ex}|c|c|}
+		\hline
+		\hline
+		\tbf{Requisito} & \tbf{Plat. Ref.} & \tbf{SAR (dBm)} & \tbf{Tol.}\\
+		\hline
+		R101  &  Baytrail & 5 & 1 \\
+		\hline
+		R201	&	 Clovertrail & 6 & 2\\
+		\hline
+		R301	&  Merrifield & 4 & 3\\
+		\hline
+		\hline
+	\end{tabular}
+	\caption{Tabla de SAR por Plat. de Ref.}
+	\label{tab:SAR}
+	\end{table}
+	%\end{longtable}
+	%\end{center}%\end{table}
+
+\section{Código fuente}
+	En un proyecto de desarrollo, es común introducir extractos de código en diferentes lenguajes como C, C++, Matlab, Python, Java, bash script, etc.\nli
+	En estos casos, los entornos de \LaTeX\ disponibles por defecto no permiten mostrar esta información.
+	
+	El paquete \ttw{listings} permite presentar código fuente, respetando las tabulaciones para que la lectura sea confortable.
+	
+	En esta plantilla, en la sección de paquetes se ha configurado código Python para presentar los ejemplos. Es fácilmente adaptable para otros lenguajes.\nli
+	En la sección de comandos, se dispone del comando \ttw{code} que permite crear una sección de código indicando el título a mostrar, el fichero fuente correspondiente y la etiqueta con la que se harán referencias.
+	
+	A continuación, se muestra un ejemplo:
+	
+\begin{verbatim}
+	\code{Código Python de ejemplo}{code/pythonCode.py}{code:python}
+\end{verbatim}
+
+\code{Código Python de ejemplo}{code/pythonCode.py}{code:python}
+
+	Una limitación importante del paquete \ttw{listings} es que no resalta las palabras reservadas del lenguaje ni otros elementos, una característica muy deseable para el lector.
+	
+	Para eso, existe otro paquete \LaTeX\ más reciente, \ttw{minted}, disponible en \cite{minted}\footnote{\url{https://code.google.com/p/minted/}}.
+
+\section{Símbolos matemáticos y físicos}
+	Los proyectos de ingeniería suelen presentar símbolos matemáticos y físicos, tanto en los párrafos como en tablas, figuras y ecuaciones.
+	
+	Existen reglas para la notación, formateo y estilo de elementos matemáticos, tales como utilizar un símbolo por variable (p.ej., $x$ e $y$, pero no $xx$ o $yy$), escribir los símbolos en cursiva y las magnitudes y unidades físicas en redonda o el espaciado entre variables.
+	
+	\LaTeX\ está construido sobre \TeX, que fue concebido originalmente para escribir textos matemáticos con alta calidad, de forma que funciona perfectamente en estos entornos. Su integración es suave, rápida y sencilla de seguir, una vez se tiene algo de práctica.
+	
+	Una extensión de esto es el uso de magnitudes físicas con sus correspondientes múltiplos. En \LaTeX\ se provee del paquete \ttw{SIunits}, presente en esta plantilla.
+	
+	A continuación se muestran varios ejemplos de su uso, con su código original.
+
+	Para ecuaciones integradas en el párrafo, tan sólo se usa el símbolo dólar (\$) antes y después del símbolo. Por ejemplo, con \$\tit{\ttw{x}}\$ se indica la variable $x$.\nli
+	Las ecuaciones en línea deben usarse limitadamente. Para escribir ecuaciones más largas están los entornos \ttw{displaymath}, \ttw{equation} y \ttw{align}.
+	\smallskip
+	
+	Los entornos \ttw{displaymath} y \ttw{equation} muestran una ecuación en una línea. La diferencia entre ambos es que el primero no realiza una numeración de la ecuación y el segundo sí. Sólo se puede hacer una referencia a una ecuación numerada.
+	
+	Por ejemplo, la ecuación de la proporción áurea en entorno \ttw{displaymath},
+\begin{lstlisting}
+	\begin{displaymath}
+		\phi^2 - \phi - 1 = 0
+	\end{displaymath}
+\end{lstlisting}
+
+\begin{displaymath}
+	\phi^2 - \phi - 1 = 0
+\end{displaymath}
+
+y en entorno \ttw{equation}, mostrando la ecuación~\ref{eq:aurea} en la página~\pageref{eq:aurea}:
+\begin{lstlisting}
+	\begin{equation}
+		\phi^2 - \phi - 1 = 0
+		\label{eq:aurea}
+	\end{equation}
+\end{lstlisting}
+
+\begin{equation}
+	\phi^2 - \phi - 1 = 0
+	\label{eq:aurea}
+\end{equation}
+
+%\begin{equation}
+	%\int_0^\infty \mathrm{e}^{-x}\,\mathrm{d}x = z
+	%\label{eq:prueba}
+%\end{equation}
+
+	En caso de querer desarrollar una ecuación en varias líneas, se debe emplear el entorno \ttw{align}. Funciona como un entorno \ttw{array} de dos columnas separadas por el símbolo dólar.\nli
+	Por ejemplo, el desarrollo en serie de Fourier de una función $x(t)$ en forma trigonométrica y exponencial,
+\begin{align}
+	x(t) & = \frac{a_0}{2} %\\
+	     + \sum_{k = 1}^{k = \infty}{A_k \cos(\omega_{k} t)}
+			 + \sum_{k = 1}^{k = \infty}{B_k \sin(\omega_{k} t)}\label{eq:fou:trig} \\
+			 & = \sum_{k = -\infty}^{k = \infty}{X_k e^{j \omega_k t}}\label{eq:fou:exp}
+\end{align}
+
+	Referenciando ambas ecuaciones, la ecuación~\ref{eq:fou:trig} desarrolla la serie de Fourier de forma trigonométrica y la ecuación~\ref{eq:fou:exp} de forma exponencial.
+	
+	En caso de no querer mostrar ninguna numeración en las ecuaciones, se debe usar el entorno \ttw{align*}.
+	
+	En caso de querer desarrollar una ecuación, pero sólo numerar algunas de ellas, se debe añadir el comando \ttw{\textbackslash nonumber} a las ecuaciones que no deseen ser numeradas.
+
+	Como anotación, existe también el entorno \ttw{eqnarray}, pero presenta limitaciones, tales como referenciar varias ecuaciones dentro de un entorno. Por esta razón es mejor usar el entorno \ttw{align}.
+	
+	Respecto a las magnitudes y unidades físicas, la tabla~\ref{tab:ctes} (pág.~\pageref{tab:ctes}) muestra diferentes constantes físicas.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{p{8cm}cp{3cm}}
+	\hline
+	Constante Gravitacional & $G_0$ & $6.67 \, 10^{-11} \, \newton\metre^2\per\kilogram^2$\\
+	Constante de Planck & $h$ & $6.63 \, 10^{-34} \, \joule\cdot\second$\\
+	Constante de Stefan-Boltzman & $\sigma$ & $5.67 \, 10^{-8} \watt\per\metre^2\kelvin^4$\\
+	Carga elemental & $e$ & $1.6 \cdot 10^{-19} \, \coulomb$\\
+	Masa del electrón & $m_e$ & $9.11 \, 10^{-31} \kilogram$\\
+	Velocidad de la luz en el vacío & $c_0$ & $3 \, 10^8 \metre\per\second$ \\
+	Permitividad eléctrica en el vacío & $\epsilon_0$ & $8.85 \, 10^{-12} \, \farad\per\metre$\\
+	Permeabilidad magnética en el vacío & $\mu$ & $1.26 \, 10^{-6} \, \henry\per\metre$\\
+	\hline
+\end{tabular}
+	\caption{Constantes físicas (usando \ttw{SIunits})}
+	\label{tab:ctes}
+\end{table}
+
+	En el manual de \ttw{SIunits}, presente en un PDF entre el material adicional adjunto a esta plantilla, se puede encontrar el resto de magnitudes y unidades a utilizar (especialmente, pág.~25 y sigs.).
+
+\section{Referencias bibliográficas}
+	Además del etiquetado de secciones, tablas, figuras y ecuaciones a lo largo del proyecto, debe referenciarse el origen bibliográfico de todos los datos necesarios.
+	
+	Para eso, \LaTeX\ incluye la herramienta Bib\TeX, que permite almacenar fuentes bibliográficas (libros, artículos, revistas, páginas web, seminarios, etc.) en un archivo y formato estándar, referenciarlas mediante etiquetas (equivalente a las referencias a secciones, tablas, figuras y ecuaciones) y variar el estilo bibliográfico según se prefiera.
+	En esta plantilla se incluyen dos ficheros,
+\begin{ite}
+	\item{\ttw{E2.Bibliografia.bib}. Fichero que contiene todas las fuentes bibliográficas utilizando la estructura de Bib\TeX.}
+	\item{\ttw{E1.Bibliografia.tex}. Fichero que al final de la memoria que imprime las referencias según el estilo bibliográfico seleccionado entre varias opciones. También incluye la referencia a la bibliografía en la Tabla de contenidos del proyecto.}
+\end{ite}
+
+	Respecto al estilo bibliográfico, el autor puede seleccionar el que considere mejor según su criterio.\nli
+	Bib\TeX\ ofrece los siguientes estilos bibliográficos:
+\begin{descript}
+	\item[plain]{Es el estilo básico (de ahí, su nombre). Las entradas se ordenan alfabéticamente y se etiquetan con un número (p.ej., [1])}
+	\item[unsrt]{Es igual que plain, pero aparecen en orden de citación.}
+	\item[alpha]{El etiquetado se hace por autor y año de publicación (p.ej., [Knu66])}
+	\item[abbrv]{Igual que alpha, pero más abreviado.}
+\end{descript}
+	
+	Comparando esta plantilla con la guía de estilo (véase~\cite{GuiaEstilo}, pág. 13 y sigs.), los estilos \ttw{plain} y \ttw{unsrt} corresponden con el denominado método numérico y los estilos \ttw{alpha} y \ttw{abbrv} con el método autor y año.
+
+\section{Formato de los Apéndices}
+	Se incluye en los apéndices información complementaria al texto del proyecto que no se considera indispensable para su compresión.
+	
+	Ejemplo: Apéndice A: Métodos de generación de ruidos gaussianos fraccionarios.
+
+	Los apéndices se numeran alfabéticamente y para su redacción, se han de seguir las reglas de seccionado como en los capítulos anteriores, no tiene ninguna peculiaridad.
+
+\section{Glosario de términos}
+	Un glosario (en inglés, \tit{index}) referencia palabras importantes dentro del documento y la página o páginas en que puede encontrarse este término.
+
+	En \LaTeX, la herramienta \ttw{MakeIndex} presente en el paquete \ttw{makeidx} se encarga de gestionar los apéndices. Esta plantilla lo incluye.
+	
+	Aunque \ttw{MakeIndex} ofrece muchas más prestaciones, se muestra un uso básico con el comando \ttw{\textbackslash miindex}. Con él se crea la palabra seleccionada y se inserta con su referencia a página.
+
+\section{Sobre los correctores ortográficos}
+	\LaTeX\ no incluye un corrector ortográfico como Microsoft Word\R.\nli
+	Tampoco el compilador de Windows\R MiK\TeX, que sólo recibe un fichero fuente en formato TXT y lo entrega en PDF.
+	
+	Si se desea esta funcionalidad\footnote{Es muy recomendable, en mi opinión (Nota del autor).}, se depende del entorno de desarrollo. En este caso, esta plantilla está hecha en \TeX nicCenter, que incluye un diccionario de palabras a corregir.
+	
+	A pesar de eso, se incluye un diccionario en español que debe instalarse según las notas indicadas en el fichero léame.
+
+\section{Decálogo del usuario novel de \LaTeX}
+	Como se ha comentado anteriormente, la curva de aprendizaje de \LaTeX\ es difícil\footnote{Aún así, es justo decir que conseguir un documento de equivalente calidad no resulta mucho más fácil en otro sistema, ya que requiere conocer funciones avanzadas.}, así que se recomienda seguir estas recomendaciones:
+\begin{enumerate}
+	\item{Sé práctico, aprende lo que necesites para el proyecto de esta plantilla y utilízalo.}
+	\item{Sigue la plantilla, está pensada para proveerte de todo lo necesario.}
+	\item{Usa formularios (en inglés, \tit{cheat sheet}) y busca en internet lo que necesites.}
+	\item{Cuanto antes, instálate un entorno \LaTeX\ (un MiK\TeX y un \TeX nicCenter, por ejemplo) y practica con él.}
+	\item{Practica con el entorno, especialmente el \tit{debugueo}.}
+	\item{Sé paciente, deja que \LaTeX\ te resulte familiar.}
+	\item{Si después de intentarlo, no lo consigues, no lo uses, no es obligatorio. No te castigues.}
+	\item{No te conviertas en tipógrafo, no profundices demasiado.}
+	\item{Busca ayuda como en Cervan\TeX\footnote{\url{www.cervantex.es}}. Tienen una lista de correo activa y te contestarán.}
+	\item{Deja el estilo para el final.}
+	
+\end{enumerate}
+
+
+\section{Otras recomendaciones}
+	Finalmente, hay cuatro recomendaciones a tener en cuenta durante la redacción del proyecto. Son consejos prácticos basados en la experiencia que resultarán útiles.
+\begin{descript}
+	\item[Ficheros de compilación.]{El compilador MiK\TeX\ genera ficheros de salida tales como el resultado de la compilación (los \tit{logs}), muy importantes en caso de tener que encontrar causas de origen en un fallo; tablas de contenido, tablas de figuras, ficheros que realimentan la siguiente compilación como las referencias cruzadas, o la bibliografía.\nli
+	Como recomendación, mantener estos ficheros actualizados y utilizar las opciones del entorno de desarrollo para borrarlos o guardarlos en una ubicación específica.}
+	
+	\item[Codificación de archivos]{Existen varios formatos de codificación de archivos, que condicionan cómo los ceros y unos representan los caracteres. \nli
+	Por ejemplo, ANSI o UTF-8.\nli
+	Dependiendo del formato, el compilador puede malinterpretar los caracteres, generando un documento erróneo, típicamente con los acentos. A veces, incluso, el lector puede leer bien el texto pero el compilador no, siendo más difícil detectar este hecho. La causa es que el editor de texto tiene reglas diferentes del compilador \LaTeX. También es común que ocurra esto en un situación de copiar y pegar texto.\nli
+	En ese caso, debe cambiarse la codificación para que sea correcta. Una forma sencilla de hacerlo en Windows\R\ es utilizando el Notepad++. Hay una opción de codificación.}
+	
+	\item[Referenciar a ficheros]{Para la referencia a ficheros en figuras o a código fuente, hay que usar ficheros. Es recomendable que su nombre tenga un juego de caracteres reducido, es decir, alfanumérico y poco más, y que su ruta de acceso siga esa regla también, es decir, en los directorios relativos respecto del directorio principal.\nli
+	Por ejemplo, en esta plantilla, las gráficas están en el directorio `code' y los gráficos en el directorio `graphs'.}
+	
+	\item[Cervan\TeX.]{El grupo español de usuarios de \LaTeX\ se llama Cervan\TeX. Su página web es \url{www.cervantex.es}. Disponen de una lista de distribución en la que se pueden preguntar dudas.\nli
+	Es muy recomendable tenerla en cuenta.}
+\end{descript}
+
+\chapterend{}

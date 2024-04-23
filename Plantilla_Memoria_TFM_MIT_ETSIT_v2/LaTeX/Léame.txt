@@ -1,0 +1,50 @@
+LÉAME
+-----
+
+Lista de ficheros:
+	- Plantilla LaTeX para TFG/TFM/PFC
+	- Resúmenes de LaTeX
+	- Manuales de LaTeX complementarios
+	- Diccionario de español
+	- Logos vectoriales de la ETSIT y la UMA.
+
+La Plantilla LaTeX está hecha para ser abierta desde el entorno TeXnicCenter
+	de Windows, aunque puede utilizarse cualquier editor.
+	En ese caso, el archivo principal es "A0.Mi Proyecto fin de carrera.tex".
+
+Fuentes LaTeX (Computer Modern) y Arial.
+	LaTeX trabaja por defecto con la tipografía Computer
+Modern.
+	Si se desea cambiar a la tipografía Arial, como en
+Microsoft Word, Apache OpenOffice o LibreOffice, puede
+hacerse renombrando los comandos siguientes:
+	\renewcommand{\rmdefault}{phv} % Arial
+	\renewcommand{\sfdefault}{phv} % Arial
+Para ello, tan sólo hay que descomentarlos en el 
+archivo "A2.Preambulo.comandos.tex".
+
+Estructura de la plantilla y sus archivos:
+	La plantilla cumple la estructura que la ETSIT establece 
+en un TFG/TFM/PFC.
+	Además, está nombrada para que su utilización desde el entorno 
+de desarrollo sea ordenada y lineal, de manera que los archivos 
+respeten el orden secuecial de los capítulos.
+	Para conseguir esta ordenación lineal, se hace uso de Letras 
+y números adecuadamente. Por ejemplo, A0, A1, B1, B2, D0, D1, E1, ó F.
+	Por ejemplo, el documento maestro "A0.Mi Proyecto fin 
+de carrera.tex" aparece al principio de los archivos para 
+que sea fácilmente localizable. 
+	Además, los archivos de entornos y preámbulos aparecen 
+al principio, los archivos que contienen bibliografía y 
+apéndices al final.
+
+	Se recomienda mantener esta ordenación durante la elaboración 
+del TFG/TFM/PFC.
+	También se recomienda generar el documento PDF incrementalmente,
+anulando las secciones que no se utilicen desde el archivo principal,
+para que la revisión sea lo más rápida posible.
+	Por ejemplo, al elaborar el capítulo 3 y generar el documento
+PDF, no es necesario ni el prólogo, ni los capítulos anteriores ni
+posteriores.
+	Hay que tener en cuenta que un TFG/TFM/PFC es un documento
+extenso, por ello es mejor seguir estas reglas de uso.
